@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Inbox Cleaner logo">
+  <defs>
+    <linearGradient id="background" x1="18" y1="12" x2="112" y2="120" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#238660"/>
+      <stop offset="1" stop-color="#0B4B38"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="96" y1="18" x2="108" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8F59B"/>
+      <stop offset="1" stop-color="#B8DC74"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="32" fill="url(#background)"/>
+  <rect x="7" y="7" width="114" height="114" rx="29" fill="none" stroke="#FFFFFF" stroke-opacity=".13" stroke-width="2"/>
+  <path d="M24 49c0-7.73 6.27-14 14-14h50c7.73 0 14 6.27 14 14v38c0 7.73-6.27 14-14 14H38c-7.73 0-14-6.27-14-14V49Z" fill="#FFFFFF"/>
+  <path d="m31 47 27.4 21.21a7.5 7.5 0 0 0 9.2 0L95 47" fill="none" stroke="#126047" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m31 90 23-21M95 90 72 69" fill="none" stroke="#D9EDE4" stroke-width="5" stroke-linecap="round"/>
+  <path d="M101.5 17c.9 8.27 5.23 12.6 13.5 13.5-8.27.9-12.6 5.23-13.5 13.5-.9-8.27-5.23-12.6-13.5-13.5 8.27-.9 12.6-5.23 13.5-13.5Z" fill="url(#spark)"/>
+  <circle cx="87" cy="20" r="4" fill="#E8F59B"/>
+</svg>

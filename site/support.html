@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Support for Inbox Cleaner for Gmail.">
+  <title>Support — Inbox Cleaner for Gmail</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="/"><img src="assets/icon.svg" alt=""><span>Inbox Cleaner for Gmail</span></a><div class="nav-links"><a href="/">Home</a><a href="privacy">Privacy</a><a class="button" href="mailto:hakan@akins.app">Email support</a></div></nav></header>
+  <main class="legal"><article class="shell">
+    <span class="pill">Help</span><h1>Support</h1><p class="updated">We’re here to help with setup, connection, scanning, and cleanup questions.</p>
+    <div class="contact-card"><h2 style="margin-top:0">Contact</h2><p>Email <a href="mailto:hakan@akins.app">hakan@akins.app</a>. Include your Chrome version, Extension version, and the exact error message. Do not send email contents, screenshots containing private messages, OAuth tokens, or passwords.</p></div>
+
+    <h2>Gmail will not connect</h2>
+    <p>Confirm that you selected the correct Google account and granted the requested Gmail permission. During pre-release testing, only accounts added as OAuth test users can connect. Public users require the production OAuth app and Google verification.</p>
+
+    <h2>Google says the app is unverified</h2>
+    <p>This warning is expected only during private testing. Public release requires the OAuth consent screen to show the verified Inbox Cleaner for Gmail name, logo, homepage, Privacy Policy, and Terms of Service.</p>
+
+    <h2>Gmail quota or rate-limit error</h2>
+    <p>Wait a few minutes, then scan again. Start with 50 messages. The Extension rate-limits requests and reuses a 24-hour local cache, but Google may temporarily restrict heavy repeated scans.</p>
+
+    <h2>How do I disconnect?</h2>
+    <p>Open the Extension, select <strong>Disconnect</strong>, and confirm. This clears cached authorization and account-specific local scan data. You can also revoke access from your Google Account.</p>
+
+    <h2>How do I remove local data?</h2>
+    <p>Disconnect Gmail to clear account-specific scan data. Removing the Extension from Chrome deletes its Extension storage. Gmail messages already moved to Trash remain managed by Gmail.</p>
+  </article></main>
+  <footer class="site-footer"><div class="footer-grid shell"><span>© 2026 Inbox Cleaner for Gmail</span><div class="footer-links"><a href="/">Home</a><a href="privacy">Privacy</a><a href="terms">Terms</a></div></div></footer>
+</body>
+</html>

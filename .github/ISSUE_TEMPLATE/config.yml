@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security report
+    url: https://inbox.akins.app/support
+    about: Report sensitive security issues privately instead of opening a public issue.

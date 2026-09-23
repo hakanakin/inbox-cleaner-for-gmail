@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="actionTitle">Inbox Cleaner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="popup">
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <img src="assets/icon.svg" alt="">
+      </div>
+      <div>
+        <h1 data-i18n="actionTitle">Inbox Cleaner</h1>
+        <p data-i18n="appTagline">Private Gmail cleanup</p>
+      </div>
+    </div>
+    <a class="icon-button" href="options.html" target="_blank" title="Open settings" aria-label="Open settings" data-i18n-title="openSettings" data-i18n-aria-label="openSettings">
+      <svg viewBox="0 0 24 24"><path d="M12 15.25A3.25 3.25 0 1 0 12 8.75a3.25 3.25 0 0 0 0 6.5Z"/><path d="M19.4 15a1.8 1.8 0 0 0 .36 1.98l.05.05-2.78 2.78-.05-.05A1.8 1.8 0 0 0 15 19.4a1.8 1.8 0 0 0-1.1 1.65V21h-3.8v-.07A1.8 1.8 0 0 0 9 19.4a1.8 1.8 0 0 0-1.98.36l-.05.05-2.78-2.78.05-.05A1.8 1.8 0 0 0 4.6 15a1.8 1.8 0 0 0-1.65-1.1H3v-3.8h.07A1.8 1.8 0 0 0 4.6 9a1.8 1.8 0 0 0-.36-1.98l-.05-.05 2.78-2.78.05.05A1.8 1.8 0 0 0 9 4.6a1.8 1.8 0 0 0 1.1-1.65V3h3.8v.07A1.8 1.8 0 0 0 15 4.6a1.8 1.8 0 0 0 1.98-.36l.05-.05 2.78 2.78-.05.05A1.8 1.8 0 0 0 19.4 9a1.8 1.8 0 0 0 1.65 1.1H21v3.8h-.07A1.8 1.8 0 0 0 19.4 15Z"/></svg>
+    </a>
+  </header>
+
+  <main class="popup-main">
+    <section id="connectView" class="connect-view">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-core">
+          <img src="assets/icon.svg" alt="">
+        </div>
+      </div>
+      <span class="privacy-pill"><span class="privacy-dot"></span><span data-i18n="runsLocally">Runs locally in your browser</span></span>
+      <h2 data-i18n="heroTitle">A cleaner inbox without giving up privacy.</h2>
+      <p class="hero-copy" data-i18n="heroCopy">Connect Gmail to find low-value messages. Nothing moves until you review and confirm it.</p>
+      <button id="connectButton" class="button primary large">
+        <span data-i18n="connectGmail">Connect Gmail</span>
+        <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <div class="trust-row">
+        <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="noBackend">No backend</span></span>
+        <span><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span data-i18n="noAutoDelete">No auto-delete</span></span>
+      </div>
+    </section>
+
+    <section id="scanView" hidden>
+      <div class="connection-bar">
+        <div class="connection-copy"><span class="status-dot"></span><div><strong data-i18n="gmailConnected">Gmail connected</strong><span id="accountEmail" data-i18n="readyToScan">Ready to scan</span></div></div>
+        <div class="account-actions">
+          <button id="disconnectButton" class="account-action disconnect" type="button" data-i18n="disconnect">Disconnect</button>
+        </div>
+      </div>
+
+      <section class="scan-panel">
+        <div class="section-heading">
+          <div><span class="kicker" data-i18n="inboxScan">INBOX SCAN</span><h2 id="statusTitle" data-i18n="seeWhatCanGo">See what can go</h2></div>
+          <span id="lastScanBadge" class="quiet-badge" hidden data-i18n="justNow">Just now</span>
+        </div>
+        <p id="statusText" class="section-copy" data-i18n="scanDescription">Choose how deep to scan. Recent results are reused to protect Gmail quota.</p>
+        <div class="scan-controls">
+          <label class="select-wrap">
+            <span data-i18n="scan">Scan</span>
+            <select id="scanLimit" aria-label="Messages to scan" data-i18n-aria-label="messagesToScan">
+              <option value="50" data-i18n="messages50">50 messages</option>
+              <option value="100" data-i18n="messages100">100 messages</option>
+              <option value="200" data-i18n="messages200">200 messages</option>
+              <option value="250" data-i18n="messages250">250 messages · max</option>
+            </select>
+          </label>
+          <button id="scanButton" class="button primary scan-button">
+            <svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.34 5.66"/><path d="M20 5v6h-6"/></svg>
+            <span data-i18n="scanInbox">Scan inbox</span>
+          </button>
+        </div>
+        <div id="progressArea" class="progress-area" hidden>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <div class="progress-meta"><span id="progressText" data-i18n="preparingScan">Preparing scan…</span><span id="progressPercent">0%</span></div>
+        </div>
+      </section>
+
+      <section id="results" class="results-panel" hidden>
+        <div id="stats" class="stats">
+          <div class="stat keep"><span class="stat-icon">✓</span><div><strong id="keepCount">0</strong><span data-i18n="keep">Keep</span></div></div>
+          <div class="stat review"><span class="stat-icon">?</span><div><strong id="reviewCount">0</strong><span data-i18n="review">Review</span></div></div>
+          <div class="stat clean"><span class="stat-icon">↓</span><div><strong id="cleanCount">0</strong><span data-i18n="clean">Clean</span></div></div>
+        </div>
+
+        <div class="results-heading">
+          <div><h3 data-i18n="inboxSenders">Inbox senders</h3><p id="candidateSummary" data-i18n="browseEverySender">Browse every scanned sender.</p></div>
+          <div class="selection-actions">
+            <button id="selectCleanButton" class="text-button" data-i18n="selectClean">Select clean</button>
+            <button id="selectAllButton" class="text-button emphasized" data-i18n="selectSuggested">Select suggested</button>
+          </div>
+        </div>
+        <div class="sender-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="senderSearch" type="search" aria-label="Search sender name or email" placeholder="Search sender name or email" data-i18n-aria-label="searchSender" data-i18n-placeholder="searchSender" autocomplete="off" spellcheck="false">
+          <button id="clearSearchButton" type="button" aria-label="Clear search" title="Clear search" data-i18n-aria-label="clearSearch" data-i18n-title="clearSearch" hidden>×</button>
+        </div>
+        <div id="categoryFilters" class="category-filters" role="tablist" aria-label="Filter messages by category" data-i18n-aria-label="filterByCategory">
+          <button class="category-filter active all" type="button" data-category="ALL" role="tab" aria-selected="true"><span class="filter-name" data-i18n="all">All</span><span class="filter-count" id="allFilterCount">0</span></button>
+          <button class="category-filter clean" type="button" data-category="CLEAN" role="tab" aria-selected="false"><span class="filter-name" data-i18n="clean">Clean</span><span class="filter-count" id="cleanFilterCount">0</span></button>
+          <button class="category-filter review" type="button" data-category="REVIEW" role="tab" aria-selected="false"><span class="filter-name" data-i18n="review">Review</span><span class="filter-count" id="reviewFilterCount">0</span></button>
+          <button class="category-filter keep" type="button" data-category="KEEP" role="tab" aria-selected="false"><span class="filter-name" data-i18n="keep">Keep</span><span class="filter-count" id="keepFilterCount">0</span></button>
+        </div>
+        <div id="filterHint" class="filter-hint"><span class="hint-dot"></span><span data-i18n="hintAll">All scanned messages, grouped by sender.</span></div>
+        <div id="candidateList" class="candidate-list"></div>
+        <div class="action-dock">
+          <div class="safe-note"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></svg><span id="selectionSummary" data-i18n="noConfirmation">Nothing happens without confirmation</span></div>
+          <button id="trashButton" class="button danger" disabled>
+            <svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3m3 0-1 13H7L6 7m4 4v5m4-5v5"/></svg>
+            <span data-i18n="moveSelected">Move selected to Trash</span>
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <div id="error" class="error" hidden></div>
+  </main>
+  <footer class="extension-footer" aria-label="Product links">
+    <a href="https://inbox.akins.app/privacy" target="_blank" rel="noreferrer" data-i18n="privacyLink">Privacy</a>
+    <span aria-hidden="true">•</span>
+    <a href="https://inbox.akins.app/terms" target="_blank" rel="noreferrer" data-i18n="termsLink">Terms</a>
+    <span aria-hidden="true">•</span>
+    <a href="https://inbox.akins.app/support" target="_blank" rel="noreferrer" data-i18n="supportLink">Support</a>
+  </footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Privacy Policy for Inbox Cleaner for Gmail.">
+  <title>Privacy Policy — Inbox Cleaner for Gmail</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"><nav class="nav shell" aria-label="Main navigation"><a class="brand" href="/"><img src="assets/icon.svg" alt=""><span>Inbox Cleaner for Gmail</span></a><div class="nav-links"><a href="/">Home</a><a href="terms">Terms</a><a class="button" href="support">Support</a></div></nav></header>
+  <main class="legal"><article class="shell">
+    <span class="pill">Legal</span><h1>Privacy Policy</h1><p class="updated">Effective date: September 20, 2026</p>
+    <p class="notice"><strong>Short version:</strong> Inbox Cleaner for Gmail accesses Gmail only after you grant permission, processes message information locally in your browser, does not operate a backend that receives your inbox data, and never deletes or trashes messages without your explicit confirmation.</p>
+
+    <h2>1. Scope</h2>
+    <p>This Privacy Policy explains how the Inbox Cleaner for Gmail Chrome extension (the “Extension”) accesses, uses, stores, and protects information. The Extension’s single purpose is to help users review and clean low-value Gmail messages.</p>
+
+    <h2>2. Information the Extension accesses</h2>
+    <p>After you connect a Google account, the Extension uses the Gmail API to access the minimum information required for its features:</p>
+    <ul>
+      <li>Your Gmail account email address, to show which account is connected and separate local cache data by account.</li>
+      <li>Inbox message identifiers and thread identifiers.</li>
+      <li>Message metadata including sender, recipient, subject, date, Gmail labels, and the standard List-Unsubscribe header when available.</li>
+      <li>Gmail-provided message snippets, used for local classification.</li>
+      <li>The ability to modify Gmail labels so messages you explicitly select can be moved from Inbox to Trash.</li>
+    </ul>
+    <p>The Extension does not request message bodies or attachments. It does not access contacts, calendars, Drive files, browser history, or unrelated website activity.</p>
+
+    <h2>3. How information is used</h2>
+    <p>Message information is used only to provide the Extension’s user-facing inbox-cleanup features: listing messages, grouping them by sender, applying deterministic local scoring rules, displaying KEEP / REVIEW / CLEAN suggestions, showing unsubscribe links supplied by senders, and moving user-selected messages to Trash after confirmation.</p>
+    <p>The Extension does not use artificial intelligence or remote classification services. It does not use Gmail data for advertising, credit decisions, surveillance, profiling, or any unrelated purpose.</p>
+
+    <h2>4. Local processing and storage</h2>
+    <p>The Extension has no developer-operated backend. Gmail data travels directly between Google’s Gmail API and the Extension running in your Chrome browser over HTTPS.</p>
+    <p>The Extension stores settings and recent scan information in <code>chrome.storage.local</code> on your device. Recent message metadata and snippets may be cached locally for up to 24 hours to restore the latest scan and reduce Gmail API quota usage. Cache entries are limited in number. OAuth access tokens are managed by Chrome Identity and are not written to Extension storage.</p>
+
+    <h2>5. Sharing and sale of data</h2>
+    <p>The Extension does not send Gmail data to the developer or to third parties. It does not sell, rent, disclose, or transfer Gmail data for advertising or marketing. Humans working on the Extension cannot read your inbox because the developer does not receive it.</p>
+    <p>If you choose an Unsubscribe action, the Extension opens the unsubscribe URL provided by that email sender in a new browser tab. Your interaction with that sender’s website is governed by the sender’s own privacy practices.</p>
+
+    <h2>6. Google API and Chrome Web Store Limited Use</h2>
+    <p>Inbox Cleaner for Gmail’s use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+    <p>The Extension’s use of user data also complies with the <a href="https://developer.chrome.com/docs/webstore/program-policies/policies#userdata">Chrome Web Store User Data Policy</a>, including its Limited Use requirements. User data is used only to provide or improve the Extension’s single, disclosed purpose.</p>
+
+    <h2>7. Your controls and deletion</h2>
+    <ul>
+      <li>You can disconnect Gmail from the Extension at any time. Disconnecting clears cached authentication tokens and account-specific local scan data.</li>
+      <li>You can remove the Extension from Chrome to delete its local Extension storage.</li>
+      <li>You can revoke account access at any time from your Google Account’s third-party access settings.</li>
+      <li>Messages moved to Gmail Trash remain subject to Gmail’s own retention and recovery behavior.</li>
+    </ul>
+
+    <h2>8. Security</h2>
+    <p>The Extension uses Google OAuth through Chrome Identity and communicates with Gmail only through HTTPS Gmail API endpoints. Permissions are limited to identity, local Extension storage, and Gmail API access required for reviewing and moving messages to Trash.</p>
+
+    <h2>9. Children</h2>
+    <p>The Extension is not directed to children under 13 and is not intended for use where parental consent is required by applicable law.</p>
+
+    <h2>10. Changes to this policy</h2>
+    <p>If the Extension’s data practices change, this page and any required in-product disclosures will be updated before the change applies. The effective date above identifies the latest version.</p>
+
+    <h2>11. Contact</h2>
+    <p>Questions or privacy requests can be sent to <a href="mailto:hakan@akins.app">hakan@akins.app</a>.</p>
+  </article></main>
+  <footer class="site-footer"><div class="footer-grid shell"><span>© 2026 Inbox Cleaner for Gmail</span><div class="footer-links"><a href="/">Home</a><a href="terms">Terms</a><a href="support">Support</a></div></div></footer>
+</body>
+</html>

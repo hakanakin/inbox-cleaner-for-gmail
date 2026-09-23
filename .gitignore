@@ -1,0 +1,23 @@
+.DS_Store
+**/.DS_Store
+
+# Local Cloudflare and build state
+.wrangler/
+.build/
+
+# Generated release packages contain the injected OAuth client ID
+release/*.zip
+
+# Local credentials and signing material
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+
+# Editor and OS files
+.idea/
+.vscode/
+*.swp
+*~

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="settingsTitle">Inbox Cleaner settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="settings-page">
+  <main class="settings-shell">
+    <header class="settings-header">
+      <div class="brand-mark"><img src="assets/icon.svg" alt=""></div>
+      <div><span class="kicker" data-i18n="inboxCleanerKicker">INBOX CLEANER</span><h1 data-i18n="cleanupPreferences">Cleanup preferences</h1><p data-i18n="settingsDescription">Fine-tune local rules. Every setting stays on this device.</p></div>
+    </header>
+    <form id="settingsForm" class="settings-grid">
+      <section class="settings-card">
+        <div class="settings-card-title"><span class="number">01</span><div><h2 data-i18n="languageTitle">Language</h2><p data-i18n="languageDescription">Follow Chrome automatically or choose a language.</p></div></div>
+        <label class="field"><span data-i18n="languageLabel">Interface language</span>
+          <select id="language">
+            <option value="auto" data-i18n="languageAuto">Automatic — Chrome language</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="zh_CN">简体中文</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ar">العربية</option>
+            <option value="tr">Türkçe</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="settings-card">
+        <div class="settings-card-title"><span class="number">02</span><div><h2 data-i18n="scanDepth">Scan depth</h2><p data-i18n="scanDepthDescription">Control how much of your inbox is reviewed.</p></div></div>
+        <div class="field-grid">
+          <label class="field"><span data-i18n="messagesPerScan">Messages per scan</span>
+            <select id="scanLimit">
+              <option value="50" data-i18n="quickCheck">50 — Quick check</option>
+              <option value="100" data-i18n="lightCleanup">100 — Light cleanup</option>
+              <option value="200" data-i18n="recommended">200 — Recommended</option>
+              <option value="250" data-i18n="safeMaximum">250 — Safe maximum</option>
+            </select>
+          </label>
+          <label class="field"><span data-i18n="considerOldAfter">Consider old after</span>
+            <div class="input-suffix"><input id="reviewDays" type="number" min="1" max="3650"><span data-i18n="days">days</span></div>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-card">
+        <div class="settings-card-title"><span class="number">03</span><div><h2 data-i18n="cleanupSignals">Cleanup signals</h2><p data-i18n="signalsDescription">Choose what should influence local scoring.</p></div></div>
+        <label class="toggle-row"><div><strong data-i18n="promotions">Promotions</strong><span data-i18n="promotionsDescription">Sales, offers, coupons, and unsubscribe-heavy mail</span></div><input id="cleanPromotions" type="checkbox"><i></i></label>
+        <label class="toggle-row"><div><strong data-i18n="socialNotifications">Social notifications</strong><span data-i18n="socialDescription">Likes, follows, comments, and network updates</span></div><input id="cleanSocial" type="checkbox"><i></i></label>
+      </section>
+
+      <section class="settings-card">
+        <div class="settings-card-title"><span class="number">04</span><div><h2 data-i18n="trustedSenders">Trusted senders</h2><p data-i18n="trustedDescription">Messages matching these addresses always stay in KEEP.</p></div></div>
+        <label class="field"><span data-i18n="oneSenderPerLine">One sender fragment per line</span>
+          <textarea id="keepSenders" rows="5" placeholder="billing@mybank.com&#10;family@example.com" data-i18n-placeholder="trustedPlaceholder"></textarea>
+        </label>
+      </section>
+
+      <div class="settings-actions">
+        <p id="saved" class="saved" hidden><span>✓</span><span data-i18n="savedDevice">Saved on this device</span></p>
+        <button class="button primary save-button" type="submit" data-i18n="savePreferences">Save preferences</button>
+      </div>
+    </form>
+    <footer class="extension-footer settings-footer" aria-label="Product links">
+      <a href="https://inbox.akins.app/privacy" target="_blank" rel="noreferrer" data-i18n="privacyLink">Privacy</a>
+      <span aria-hidden="true">•</span>
+      <a href="https://inbox.akins.app/terms" target="_blank" rel="noreferrer" data-i18n="termsLink">Terms</a>
+      <span aria-hidden="true">•</span>
+      <a href="https://inbox.akins.app/support" target="_blank" rel="noreferrer" data-i18n="supportLink">Support</a>
+    </footer>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>
